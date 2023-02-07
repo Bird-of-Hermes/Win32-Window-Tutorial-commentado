@@ -67,8 +67,8 @@ int CALLBACK WinMain(
 	while 
 		(GetMessage(
 			&msg, // ponteiro/referência para o struct
-			NULL, // -1 ou NULL define quais mensagens serão tratadas, não usar o hWnd da linha 27 pois ele será processado pelo directX e não pela API do windows
-			0, 0) > 0) // se quer filtrar mensagens (seja o primeiro clique do mouse ou a última tecla pressionada, algo do tipo)
+			NULL, // define quais mensagens serão tratadas
+			0, 0) != 0) // se quer filtrar mensagens (seja o primeiro clique do mouse ou a última tecla pressionada, algo do tipo)
 			   // se o valor de retorno não for 0, o programa está com problemas
 	{
 		TranslateMessage(&msg); // traduz as mensagens do teclado/mouse/etc para o sistema operacional -> é função dele decodificar o WM_CHAR
